@@ -24,9 +24,7 @@ sim_params.t_p=1e-9;      % Pulse duration in [s]
 sim_params.f_adc=1e9;     % ADC sampling frequency in [Hz]
 
 tx_sig = uwb_tx_model();
-
 ch_sig = uwb_ch_model(tx_sig);
-
 rx_sig = uwb_rx_model(ch_sig);
 
 
