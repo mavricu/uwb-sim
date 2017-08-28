@@ -22,9 +22,11 @@ function out_pulse=uwb_gen_pulse(p_type, p_len, f_s)
     out_pulse=(1/(sigma*sqrt(2*pi))).*exp(-s_p.^2/(sigma^2*2)); % generate single Gauss
   end
   if(p_type == 1)
-    %% Gaussian 1st order derivate
+    %% Gaussian 1st order derivative
     sigma=0.2;
-    out_pulse=(s_p./(sigma^3*sqrt(2*pi))).*exp(-s_p.^2/(sigma^2*2)); % generate single Gauss
+    out_pulse=-(s_p./(sigma^3*sqrt(2*pi))).*exp(-s_p.^2/(sigma^2*2)); % generate single Gauss
+    %% Gaussian 2nd order derivative
+    %%    out_pulse=((sigma^2-s_p.^2)./(sigma^5*sqrt(2*pi))).*exp(-s_p.^2/(2*sigma^2));
   end
   if(p_type == 2)
     %% Sine function - only one pulse centered around 'zero' (around mid of array)
