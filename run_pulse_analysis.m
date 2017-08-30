@@ -40,7 +40,7 @@ for ixx=1:length(p_len)-1
   gauss_1d_p(ixx,end/2-length(o_s)/2+1:end/2+length(o_s)/2)=o_f;
   sin_p(ixx,end/2-length(o_s)/2+1:end/2+length(o_s)/2)=o_s;
 
-  leg_str=[leg_str; sprintf('%0.02e', p_len(ixx))];
+  leg_str=[leg_str; num2str(p_len(ixx), '%0.2e')];
 
   f_tmp=20*log10(abs(fft(gauss_p(ixx, :))));
 %  gauss_f(ixx, :)=fftshift(f_tmp);
